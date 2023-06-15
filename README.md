@@ -6,7 +6,16 @@ This is an implementation in a hardware simulator of 3 different basic processor
 ## Simple Single Cycle Processor
 To begin with we have an implementation of a really simple processor capable of using the set of instructions: j, halt, lw, sw, alu, addi and beq. With it you could write simple programs where you could manipulate the register bank, as well as the data memory and the value of the pc register as well as been able to do some basic arithmetic operations:
 <p align="center">
-   <img src="https://github.com/rorro6787/rorro6787/blob/main/Images/procesadorBasico.png" height="500" />
+   <img src="https://github.com/rorro6787/rorro6787/blob/main/Images/procesadorBasico.png" height="700" />
+</p>
+
+<hr style="height:2px;border-width:0;color:gray;background-color:gray">
+
+## Extended Single Cycle Processor
+Now, we have an implementation of a really simple processor capable of using the set of instructions: j, halt, lw, sw, alu, addi, beq, andi, ori, lui, bne, bgtz, blez, jal, jr and rsublt. With it you could write more complex programs where you could manipulate the register bank, as well as the data memory and the value of the pc register as well as been able to do different arithmetic operations and control the flow of execution based on variuous branch conditions:
+
+<p align="center">
+   <img src="https://github.com/rorro6787/rorro6787/blob/main/Images/procesadorExtendido.png" height="700" />
 </p>
 
 <hr style="height:2px;border-width:0;color:gray;background-color:gray">
