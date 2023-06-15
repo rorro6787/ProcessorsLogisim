@@ -1,0 +1,59 @@
+.data
+libres: .word 0, 0, 0
+res: .word 0
+tam: .word 4
+dirA: .word 24
+datosA: .word 25, -3, -6, 1
+datosB: .word  23, -1, -4, -1
+
+.text
+
+      LW $1, tam($0)
+      LW $2, dirA($0)
+      nop
+      ADD $3, $1, $1
+      nop
+      nop
+      ADD $3, $3, $3
+      nop
+      nop
+      ADD $3, $3, $2 
+      ADD $6, $0, $0 
+
+      bucle: 
+
+      	BEQ $1, $0, done
+      	nop
+      	nop
+      	nop
+      	ADDI $1, $1, -1
+      	LW $4, libres($2)
+      	LW $5, libres($3)
+      	nop
+      	nop
+      	SUB $7, $4, $5
+      	nop
+      	nop
+      	SLT $8, $7, $0   // si $7 >= 0 || 0 --> $8  Caso Contrario 1 --> $8
+      	nop
+      	nop
+      	BEQ $8, $0, sigoBucle
+      	nop
+      	nop
+      	nop
+      	SUB $7, $0, $7
+      	nop
+      	nop
+
+      sigoBucle:
+
+     	ADD $6, $6, $7
+      	ADDI $2, $2, 4
+      	ADDI $3, $3, 4
+      	J bucle
+      	nop
+    
+done:
+
+      SW $6, res($0)
+      HALT
